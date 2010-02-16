@@ -1,0 +1,58 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:test_runner.cpp" caret="0" fromTop="0" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:build_runner.cmd" caret="6" fromTop="0" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.cpp" caret="0" fromTop="0" />
+      <File id="d:Miscellaneous Files/f:string/l:C!?Program Files (x86)?Microsoft Visual Studio 9.0?VC?crt?src?string" caret="2634" fromTop="14" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.h" caret="1015" fromTop="34" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.h" caret="248" fromTop="14" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.cpp" caret="59" fromTop="4" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.cpp" caret="0" fromTop="0" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.h" caret="165" fromTop="11" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:build_runner.cmd" caret="21" fromTop="0" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.h" caret="165" fromTop="11" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:test_runner.cpp" caret="0" fromTop="0" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.h" caret="299" fromTop="10" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.cpp" caret="681" fromTop="20" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.cpp" caret="69" fromTop="9" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.cpp" caret="23" fromTop="1" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.h" caret="149" fromTop="7" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.cpp" caret="284" fromTop="14" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.h" caret="214" fromTop="21" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.h" caret="28" fromTop="0" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.h" caret="522" fromTop="22" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.cpp" caret="616" fromTop="28" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.cpp" caret="284" fromTop="18" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.h" caret="493" fromTop="20" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.h" caret="825" fromTop="35" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.h" caret="332" fromTop="15" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.h" caret="620" fromTop="26" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.h" caret="1145" fromTop="39" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:testsuite.h" caret="1133" fromTop="38" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.h" caret="293" fromTop="14" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.h" caret="39" fromTop="2" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.cpp" caret="284" fromTop="25" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.cpp" caret="284" fromTop="11" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.cpp" caret="231" fromTop="8" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.cpp" caret="466" fromTop="27" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.cpp" caret="368" fromTop="22" />
+      <File id="34E8F774-9CFE-4CD3-A3E7-A7B2C25100E4/f:FizzBuzz.cpp" caret="286" fromTop="18" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+</Configuration>
