@@ -1,4 +1,0 @@
-<Modules>
-  <Module PersistentId="DFA3037E-5950-4C91-AA6B-53C6EF2974A1" ModuleId="FizzBuzzKata" />
-  <Module PersistentId="75C12BE1-7DC0-4055-BDDA-A65A2AB90724" ModuleId="FizzBuzzKata.Tests" />
-</Modules>
