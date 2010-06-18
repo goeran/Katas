@@ -1,0 +1,116 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="DFA3037E-5950-4C91-AA6B-53C6EF2974A1/f:FizzBuzz.cs" caret="90" fromTop="3" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1282" fromTop="48" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1827" fromTop="15" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="10" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="10" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="20" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="4" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="15" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="21" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="12" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1827" fromTop="15" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="10" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="15" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="17" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="14" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="0" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="33" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="18" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="10" />
+      <File id="DFA3037E-5950-4C91-AA6B-53C6EF2974A1/f:FizzBuzz.cs" caret="123" fromTop="6" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="172" fromTop="3" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="510" fromTop="11" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1084" fromTop="26" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1047" fromTop="22" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="886" fromTop="17" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1232" fromTop="22" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1394" fromTop="27" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1431" fromTop="11" />
+      <File id="75C12BE1-7DC0-4055-BDDA-A65A2AB90724/f:FizzBuzzTests.cs" caret="1750" fromTop="24" />
+      <File id="DFA3037E-5950-4C91-AA6B-53C6EF2974A1/f:FizzBuzz.cs" caret="763" fromTop="29" />
+      <File id="DFA3037E-5950-4C91-AA6B-53C6EF2974A1/f:FizzBuzz.cs" caret="242" fromTop="10" />
+      <File id="DFA3037E-5950-4C91-AA6B-53C6EF2974A1/f:FizzBuzz.cs" caret="516" fromTop="19" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.3\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="testFixture" priority="2" />
+      <Item value="test" priority="31" />
+      <Item value="TestFixture" priority="0" />
+      <Item value="var" priority="47" />
+      <Item value="new" priority="14" />
+      <Item value="FizzBuzzKata" priority="0" />
+      <Item value="fizzbuzz" priority="23" />
+      <Item value="Assert`0" priority="26" />
+      <Item value="return" priority="21" />
+      <Item value="null" priority="1" />
+      <Item value="if" priority="13" />
+      <Item value="i" priority="0" />
+      <Item value="FizzBuzz`0" priority="12" />
+      <Item value="result" priority="16" />
+      <Item value="Convert`0" priority="8" />
+      <Item value="testSetup" priority="3" />
+      <Item value="FizzBuzz" priority="2" />
+      <Item value="public" priority="2" />
+      <Item value="class" priority="0" />
+      <Item value="string" priority="4" />
+      <Item value="int" priority="8" />
+      <Item value="number" priority="24" />
+      <Item value="else" priority="0" />
+      <Item value="Console`0" priority="0" />
+      <Item value="List`0" priority="3" />
+      <Item value="numbers" priority="0" />
+      <Item value="foreach" priority="3" />
+      <Item value="divisibleBy" priority="0" />
+      <Item value="IsDivisibleBy`0" priority="5" />
+      <Item value="divisableByThree" priority="1" />
+      <Item value="divisableByFive" priority="1" />
+      <Item value="private" priority="2" />
+      <Item value="fizz`0" priority="0" />
+      <Item value="fizzBuzz" priority="6" />
+      <Item value="Boolean`0" priority="0" />
+      <Item value="IsFizzBuzz`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="AreEqual`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FizzBuzzKata.FizzBuzz">
+      <Item value="GetAnswer`0" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToString`0" priority="8" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="ForEach`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int32">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
