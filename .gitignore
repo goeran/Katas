@@ -3,5 +3,5 @@ Bin
 obj
 Obj
 _ReSharper.*
-.suo
-.user
+*.suo
+*.user
