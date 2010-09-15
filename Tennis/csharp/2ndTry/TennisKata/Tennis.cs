@@ -11,13 +11,16 @@ namespace TennisKata
             if (OnePlayerLeadFortyToLove())
                 return LeadingPlayer() + " wins";
 
-            if (BothPlayersHasWonMoreThanThreeBalls() && ScoreIsEqual())
+            if (OnePlayerHasMoreThanThreeBalls() && APlayerLeadByTwoOrMoreBalls())
+                return LeadingPlayer() + " wins";
+
+            if (BothPlayersHasWonThreeOrMoreBalls() && ScoreIsEqual())
                 return "deuce";
 
-            if (BothPlayersHasWonMoreThanThreeBalls() && APlayerLeadByOneBall())
+            if (BothPlayersHasWonThreeOrMoreBalls() && APlayerLeadByOneBall())
                 return "advantage " + LeadingPlayer();
 
-            if (BothPlayersHasWonMoreThanThreeBalls() && APlayerLeadByTwoBalls())
+            if (BothPlayersHasWonThreeOrMoreBalls() && APlayerLeadByTwoOrMoreBalls())
                 return LeadingPlayer() + " wins";
 
             return string.Format("{0} - {1}", Score(winsPlayer1), Score(winsPlayer2));
@@ -43,7 +46,12 @@ namespace TennisKata
             return winsPlayer1 > winsPlayer2 ? "Player1" : "Player2";
         }
 
-        private bool BothPlayersHasWonMoreThanThreeBalls()
+        private bool OnePlayerHasMoreThanThreeBalls()
+        {
+            return winsPlayer1 > 3 || winsPlayer2 > 3;
+        }
+
+        private bool BothPlayersHasWonThreeOrMoreBalls()
         {
             return winsPlayer1 > 2 && winsPlayer2 > 2;
         }
@@ -58,9 +66,9 @@ namespace TennisKata
             return winsPlayer1 == winsPlayer2 + 1 || winsPlayer2 == winsPlayer1 + 1;
         }
 
-        private bool APlayerLeadByTwoBalls()
+        private bool APlayerLeadByTwoOrMoreBalls()
         {
-            return winsPlayer1 == winsPlayer2 + 2 || winsPlayer2 == winsPlayer1 + 2;
+            return winsPlayer1 >= winsPlayer2 + 2 || winsPlayer2 >= winsPlayer1 + 2;
         }
 
         private static string Score(int balls)
