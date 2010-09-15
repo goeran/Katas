@@ -1,4 +1,6 @@
-﻿namespace TennisKata
+﻿using System;
+
+namespace TennisKata
 {
     public class Tennis
     {
@@ -14,6 +16,9 @@
 
             if (BothPlayersHasWonMoreThanThreeBalls() && APlayerLeadByOneBall())
                 return "advantage " + LeadingPlayer();
+
+            if (BothPlayersHasWonMoreThanThreeBalls() && APlayerLeadByTwoBalls())
+                return LeadingPlayer() + " wins";
 
             return string.Format("{0} - {1}", Score(winsPlayer1), Score(winsPlayer2));
         }
@@ -51,6 +56,11 @@
         private bool APlayerLeadByOneBall()
         {
             return winsPlayer1 == winsPlayer2 + 1 || winsPlayer2 == winsPlayer1 + 1;
+        }
+
+        private bool APlayerLeadByTwoBalls()
+        {
+            return winsPlayer1 == winsPlayer2 + 2 || winsPlayer2 == winsPlayer1 + 2;
         }
 
         private static string Score(int balls)

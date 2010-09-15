@@ -28,6 +28,8 @@ namespace TennisKata
             games.Add(new object[]{ 3, 4, "advantage Player2" });
             games.Add(new object[]{ 4, 5, "advantage Player2" });
             games.Add(new object[]{ 5, 5, "deuce" });
+            games.Add(new object[]{ 4, 6, "Player2 wins" });
+            games.Add(new object[]{ 6, 4, "Player1 wins" });
 
 
             foreach (var game in games)
