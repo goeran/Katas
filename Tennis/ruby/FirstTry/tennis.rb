@@ -4,7 +4,7 @@ class Tennis
       @block = block
     end
     
-    def or_more
+    def method_missing method
       @block.call
     end
   end
@@ -16,26 +16,42 @@ class Tennis
   
   def score
     if both_players_has_won(3).or_more and score_is_equal then
-      "duece"
+      "deuce"
     elsif both_players_has_won(3).or_more and leading_player_leads_by(1) then
-      "advantage player1"
+      "advantage " + leading_player
+    elsif one_player_has_won 4 and one_player_has_won 0 then
+      leading_player + " wins"
+    elsif both_players_has_won(3).or_more and leading_player_leads_by 2 then
+      leading_player + " wins"
     else
       "#{print @wins_player1} - #{print @wins_player2}"
     end
   end
   
   def both_players_has_won balls
-    semantics = Semantics.new do
+    Semantics.new do
       @wins_player1 >= balls and @wins_player2 >= balls
     end
   end
   
-  def leading_player_leads_by balls
-    
+  def one_player_has_won balls
+    @wins_player1 == balls or @wins_player2 == balls
   end
   
-  def both exp1, exp2
-    exp1 and exp2
+  def leading_player_leads_by balls
+    @wins_player1 >= @wins_player2 + balls or 
+    @wins_player2 >= @wins_player1 + balls
+  end
+  
+  def leading_player_leads_by balls
+    @wins_player1 == @wins_player2 + balls or @wins_player2 == @wins_player1 + balls
+  end
+  
+  def leading_player
+    if @wins_player1 > @wins_player2 then 
+      return "Player1" 
+    end
+    "Player2"
   end
   
   def player1_has_won balls
@@ -44,10 +60,6 @@ class Tennis
   
   def player2_has_more_than balls
     @wins_player2 > balls
-  end
-  
-  def both_players_has_won_3_or_more_balls
-    @wins_player1 >= 3 and @wins_player2 >= 3
   end
   
   def score_is_equal 
