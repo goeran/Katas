@@ -19,6 +19,10 @@ describe Tennis, "Score" do
     {:player1 => 2, :player2 => 3, :result => "thirty - forty"},
     {:player1 => 1, :player2 => 3, :result => "fifteen - forty"},
     {:player1 => 0, :player2 => 3, :result => "love - forty"},
+    {:player1 => 10, :player2 => 8, :result => "Player 1 wins"},
+    {:player1 => 10, :player2 => 12, :result => "Player 2 wins"},
+    {:player1 => 10, :player2 => 9, :result => "advantage Player 1"},
+    {:player1 => 11, :player2 => 12, :result => "advantage Player 2"},    
     ]    
 
   before :each do
@@ -52,13 +56,13 @@ describe Tennis, "Advantage" do
   it "is advantage when deuce and Player 1 leads by one ball" do
     @tennis.player1_wins 4
     @tennis.player2_wins 3
-    @tennis.score.should eql "advantage Player1"
+    @tennis.score.should eql "advantage Player 1"
   end
   
   it "is advantage when deuce and Player 2 leads by one ball" do
     @tennis.player1_wins 3
     @tennis.player2_wins 4
-    @tennis.score.should eql "advantage Player2"
+    @tennis.score.should eql "advantage Player 2"
   end 
 end
 
@@ -71,7 +75,7 @@ describe Tennis, "Win" do
       @tennis.score.should eql "forty - love"
 
       @tennis.player1_wins 1
-      @tennis.score.should eql "Player1 wins"
+      @tennis.score.should eql "Player 1 wins"
     end
   end
   
@@ -81,7 +85,7 @@ describe Tennis, "Win" do
       @tennis.score.should eql "love - forty"
 
       @tennis.player2_wins 1
-      @tennis.score.should eql "Player2 wins"
+      @tennis.score.should eql "Player 2 wins"
     end
   end
     
@@ -92,7 +96,7 @@ describe Tennis, "Win" do
       @tennis.score.should eql "deuce"
 
       @tennis.player1_wins 2
-      @tennis.score.should eql "Player1 wins"
+      @tennis.score.should eql "Player 1 wins"
     end
 
     it "is Player2 wins if he win 2 balls in a row" do
@@ -101,7 +105,7 @@ describe Tennis, "Win" do
       @tennis.score.should eql "deuce"
 
       @tennis.player2_wins 2
-      @tennis.score.should eql "Player2 wins"
+      @tennis.score.should eql "Player 2 wins"
     end
   end
 end

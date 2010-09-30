@@ -1,41 +1,29 @@
 class Tennis
-  class Semantics
-    def initialize &block
-      @block = block
-    end
-    
-    def method_missing method
-      @block.call
-    end
-  end
-  
   def initialize
     @wins_player1 = 0
     @wins_player2 = 0
+    @score = {
+      :love => 0,
+      :fifteen => 1,
+      :thirty => 2,
+      :forty => 3
+    }
   end
   
   def score
-    if both_players_has_won(3).or_more and score_is_equal then
-      "deuce"
-    elsif both_players_has_won(3).or_more and leading_player_leads_by(1) then
-      "advantage " + leading_player
-    elsif one_player_has_won 4 and one_player_has_won 0 then
-      leading_player + " wins"
-    elsif both_players_has_won(3).or_more and leading_player_leads_by 2 then
-      leading_player + " wins"
-    else
-      "#{print @wins_player1} - #{print @wins_player2}"
-    end
+    return "deuce" if both_players_has :forty and score_is_equal
+    return "advantage " + leading_player if both_players_has :forty and leading_player_leads_by 1
+    return leading_player + " wins" if one_player_has_more_than :forty and one_player_has :love
+    return leading_player + " wins" if both_players_has :forty and leading_player_leads_by 2
+    return "#{print @wins_player1} - #{print @wins_player2}" 
   end
   
-  def both_players_has_won balls
-    Semantics.new do
-      @wins_player1 >= balls and @wins_player2 >= balls
-    end
+  def both_players_has score
+    @wins_player1 >= @score[score] and @wins_player2 >= @score[score]
   end
   
-  def one_player_has_won balls
-    @wins_player1 == balls or @wins_player2 == balls
+  def one_player_has score
+    @wins_player1 >= @score[score] or @wins_player2 >= @score[score]
   end
   
   def leading_player_leads_by balls
@@ -47,19 +35,15 @@ class Tennis
     @wins_player1 == @wins_player2 + balls or @wins_player2 == @wins_player1 + balls
   end
   
+  def one_player_has_more_than balls
+    @wins_player1 > @score[balls] or @wins_player2 > @score[balls]
+  end
+  
   def leading_player
     if @wins_player1 > @wins_player2 then 
-      return "Player1" 
+      return "Player 1" 
     end
-    "Player2"
-  end
-  
-  def player1_has_won balls
-    @wins_player1 > balls
-  end
-  
-  def player2_has_more_than balls
-    @wins_player2 > balls
+    "Player 2"
   end
   
   def score_is_equal 
@@ -76,14 +60,6 @@ class Tennis
   
   def player1_wins balls
     @wins_player1 += balls
-  end
-  
-  def player1_wins_ball 
-    @wins_player1 += 1
-  end
-  
-  def player2_wins_ball
-    @wins_player2 += 1
   end
   
   def player2_wins balls
