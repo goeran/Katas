@@ -2,7 +2,7 @@ require 'rubygems'
 require 'spec'
 require 'tennis'
 
-describe Tennis, "score" do
+describe Tennis, "Score" do
   @games = [
     {:player1 => 0, :player2 => 0, :result => "love - love"},
     {:player1 => 1, :player2 => 0, :result => "fifteen - love"},
@@ -26,7 +26,7 @@ describe Tennis, "score" do
   end
   
   @games.each do |game|
-    it "should be '#{game[:result]}' when #{game[:player1]} - #{game[:player2]}" do
+    it "should be '#{game[:result]}' when Player 1 has won #{game[:player1]} balls and Player 2 has won #{game[:player2]} balls" do
       @tennis.player1_wins game[:player1]
       @tennis.player2_wins game[:player2]
       @tennis.score.should eql game[:result]
@@ -34,68 +34,74 @@ describe Tennis, "score" do
   end
 end
 
-describe Tennis, "deuce" do
+describe Tennis, "Deuce" do
   before :each do
     @tennis = Tennis.new
   end
   
-  it "is deuce when both players has won 3 or more balls and score is equal" do
+  it "is deuce when both players has forty and score is equal" do
     @tennis.player1_wins 3
     @tennis.player2_wins 3
     @tennis.score.should eql "deuce"
   end
 end
 
-describe Tennis, "advantage" do
+describe Tennis, "Advantage" do
   before :each do @tennis = Tennis.new end
   
-  it "is advantage when players has won 3 or more balls each and player1 is leading by one" do
+  it "is advantage when deuce and Player 1 leads by one ball" do
     @tennis.player1_wins 4
     @tennis.player2_wins 3
     @tennis.score.should eql "advantage Player1"
   end
   
-  it "is advantage when players has won 3 or more balls each and player2 is leading by one" do
+  it "is advantage when deuce and Player 2 leads by one ball" do
     @tennis.player1_wins 3
     @tennis.player2_wins 4
     @tennis.score.should eql "advantage Player2"
   end 
 end
 
-describe Tennis, "win" do
+describe Tennis, "Win" do
   before :each do @tennis = Tennis.new end
-    
-  it "is win when Player1 lead 'forty - love' and win the ball" do
-    @tennis.player1_wins 3
-    @tennis.score.should eql "forty - love"
-    
-    @tennis.player1_wins 1
-    @tennis.score.should eql "Player1 wins"
+  
+  context "when Player 1 leads forty - love" do
+    it "is Player1 that wins if he wins the next ball" do
+      @tennis.player1_wins 3
+      @tennis.score.should eql "forty - love"
+
+      @tennis.player1_wins 1
+      @tennis.score.should eql "Player1 wins"
+    end
   end
   
-  it "is win when Player2 lead 'love - forty' and win the ball" do
-    @tennis.player2_wins 3
-    @tennis.score.should eql "love - forty"
-    
-    @tennis.player2_wins 1
-    @tennis.score.should eql "Player2 wins"
+  context "when Player 2 leads forty - love" do
+    it "is Player2 that wins if he wins the next ball" do
+      @tennis.player2_wins 3
+      @tennis.score.should eql "love - forty"
+
+      @tennis.player2_wins 1
+      @tennis.score.should eql "Player2 wins"
+    end
   end
-  
-  it "is win when both players har won at least 3 balls each and Player1 win 2 balls in a row" do
-    @tennis.player1_wins 3
-    @tennis.player2_wins 3
-    @tennis.score.should eql "deuce"
     
-    @tennis.player1_wins 2
-    @tennis.score.should eql "Player1 wins"
-  end
-  
-  it "is win when both players has won at least 3 balls each and Player2 win 2 balls in a row" do
-    @tennis.player1_wins 4
-    @tennis.player2_wins 4
-    @tennis.score.should eql "deuce"
-    
-    @tennis.player2_wins 2
-    @tennis.score.should eql "Player2 wins"
+  context "when deuce" do
+    it "is Player 1 that wins if he win 2 balls in a row" do
+      @tennis.player1_wins 3
+      @tennis.player2_wins 3
+      @tennis.score.should eql "deuce"
+
+      @tennis.player1_wins 2
+      @tennis.score.should eql "Player1 wins"
+    end
+
+    it "is Player2 wins if he win 2 balls in a row" do
+      @tennis.player1_wins 4
+      @tennis.player2_wins 4
+      @tennis.score.should eql "deuce"
+
+      @tennis.player2_wins 2
+      @tennis.score.should eql "Player2 wins"
+    end
   end
 end
