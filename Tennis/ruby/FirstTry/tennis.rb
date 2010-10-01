@@ -22,32 +22,25 @@ class Tennis
     @wins_player1 >= @score[score] and @wins_player2 >= @score[score]
   end
   
-  def one_player_has score
-    @wins_player1 >= @score[score] or @wins_player2 >= @score[score]
+  def score_is_equal 
+    @wins_player1 == @wins_player2
   end
   
-  def leading_player_leads_by balls
-    @wins_player1 >= @wins_player2 + balls or 
-    @wins_player2 >= @wins_player1 + balls
+  def leading_player
+    return "Player 1" if @wins_player1 > @wins_player2
+    return "Player 2"
   end
-  
+
   def leading_player_leads_by balls
     @wins_player1 == @wins_player2 + balls or @wins_player2 == @wins_player1 + balls
   end
   
+  def one_player_has score
+    @wins_player1 >= @score[score] or @wins_player2 >= @score[score]
+  end
+  
   def one_player_has_more_than balls
     @wins_player1 > @score[balls] or @wins_player2 > @score[balls]
-  end
-  
-  def leading_player
-    if @wins_player1 > @wins_player2 then 
-      return "Player 1" 
-    end
-    "Player 2"
-  end
-  
-  def score_is_equal 
-    @wins_player1 == @wins_player2
   end
   
   def print balls_won
