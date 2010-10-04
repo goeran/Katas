@@ -10,11 +10,46 @@ class Tennis
     }
   end
   
+  def one args
+    method = "one_player_has"
+    self.send method.to_sym, args[:score]
+  end
+  
+  def both args
+    method = "both_players_has"
+    self.send method.to_sym, args[:score]
+  end
+  
+  def player args
+    { :score => args[:score] }
+  end
+  
+  def players args
+    { :score => args[:score] }
+  end
+  
+  def has n
+    { :score => n }
+  end
+  
+  def leading args
+    method = "leading_player_leads_by"
+    self.send method.to_sym, args[:score]
+  end
+  
+  def leads args
+    { :score => args[:score] }
+  end
+  
+  def by n
+    { :score => n }
+  end
+  
   def score
-    return "deuce" if both_players_has :forty and score_is_equal
-    return "advantage " + leading_player if both_players_has :forty and leading_player_leads_by 1
-    return leading_player + " wins" if one_player_has_more_than :forty and one_player_has :love
-    return leading_player + " wins" if both_players_has :forty and leading_player_leads_by 2
+    return "deuce" if both players has :forty and score_is_equal
+    return "advantage " + leading_player if both players has :forty and leading player leads by 1
+    return leading_player + " wins" if one_player_has_more_than :forty and one player has :love
+    return leading_player + " wins" if both players has :forty and leading player leads by 2
     return "#{print @wins_player1} - #{print @wins_player2}" 
   end
   
