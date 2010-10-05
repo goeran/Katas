@@ -11,8 +11,12 @@ class Tennis
   end
   
   def one args
-    method = "one_player_has"
-    self.send method.to_sym, args[:score]
+    method = "one_"
+    args[:methods].reverse.each do |m| method += m + "_" end
+    method.gsub! /_$/, ""
+    if self.methods.include? method then
+      self.send method, args[:score]
+    end
   end
   
   def both args
@@ -21,15 +25,9 @@ class Tennis
   end
   
   def player args
-    { :score => args[:score] }
-  end
-  
-  def players args
-    { :score => args[:score] }
-  end
-  
-  def has n
-    { :score => n }
+    methods = args[:methods]
+    methods.push "player"
+    { :score => args[:score], :methods => methods }
   end
   
   def leading args
@@ -37,28 +35,63 @@ class Tennis
     self.send method.to_sym, args[:score]
   end
   
-  def leads args
-    { :score => args[:score] }
+  def method_missing method, args
+    if args.class == Hash and args.has_key? :score then
+      methods = args[:methods]
+      methods.push method.to_s
+      return { :score => args[:score], :methods => methods } 
+    else
+      { :score => args, :methods => [method.to_s] }
+    end
   end
   
-  def by n
-    { :score => n }
+  def is score
+    @result = score
+  end
+  
+  def deuce!
+    @result = "deuce"
+  end
+  
+  def advantage!
+    @result = "advantage " + leading_player
+  end
+  
+  def win!
+    @result = leading_player + " wins"
+  end
+  
+  def still args
+    @result = "#{print @wins_player1} - #{print @wins_player2}"
+  end
+  
+  def playing
   end
   
   def score
-    return "deuce" if both players has :forty and score_is_equal
-    return "advantage " + leading_player if both players has :forty and leading player leads by 1
-    return leading_player + " wins" if one_player_has_more_than :forty and one player has :love
-    return leading_player + " wins" if both players has :forty and leading player leads by 2
-    return "#{print @wins_player1} - #{print @wins_player2}" 
+    is deuce! if both players has :forty 
+    is advantage! if both players has :forty and leading player leads by 1
+    is win! if one player has more than :forty and one player has :love
+    is win! if both players has :forty and leading player leads by 2
+    is still playing if !deuce? and !advantage? and !win?
+    return @result
+  end
+  
+  def deuce? 
+    both players has :forty
+  end
+  
+  def advantage?
+    both players has :forty and leading player leads by 1
+  end
+  
+  def win?
+    (one player has more than :forty and one player has :love) or
+    (both players has :forty and leading player leads by 2)
   end
   
   def both_players_has score
     @wins_player1 >= @score[score] and @wins_player2 >= @score[score]
-  end
-  
-  def score_is_equal 
-    @wins_player1 == @wins_player2
   end
   
   def leading_player
@@ -71,7 +104,7 @@ class Tennis
   end
   
   def one_player_has score
-    @wins_player1 >= @score[score] or @wins_player2 >= @score[score]
+    @wins_player1 == @score[score] or @wins_player2 == @score[score]
   end
   
   def one_player_has_more_than balls
