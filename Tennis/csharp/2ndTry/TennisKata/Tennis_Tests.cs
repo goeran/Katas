@@ -23,13 +23,13 @@ namespace TennisKata
             games.Add(new object[]{ 1, 2, "fifteen - thirty" });
             games.Add(new object[]{ 0, 2, "love - thirty" });
             
-            games.Add(new object[]{ 3, 0, "Player1 wins" });
+            games.Add(new object[]{ 3, 0, "forty - love" });
             games.Add(new object[]{ 3, 1, "forty - fifteen" });
             games.Add(new object[]{ 3, 2, "forty - thirty" });
             games.Add(new object[]{ 3, 3, "deuce" });
             games.Add(new object[]{ 2, 3, "thirty - forty" });
             games.Add(new object[]{ 1, 3, "fifteen - forty" });
-            games.Add(new object[]{ 0, 3, "Player2 wins" });
+            games.Add(new object[]{ 0, 3, "love - forty" });
 
             games.Add(new object[]{ 4, 1, "Player1 wins" });
             games.Add(new object[]{ 4, 2, "Player1 wins" });

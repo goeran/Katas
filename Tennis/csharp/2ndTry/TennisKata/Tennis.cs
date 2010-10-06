@@ -5,40 +5,42 @@ namespace TennisKata
     public class Tennis
     {
         private int winsPlayer1, winsPlayer2;
+        private const int love = 0;
+        private const int forty = 3;
 
         public string PrintScore()
         {
-            if (OnePlayerLeadFortyToLove())
+            if (OnePlayerHasMoreThan(forty) && OnPlayerHas(love))
                 return LeadingPlayer() + " wins";
 
-            if (OnePlayerHasMoreThanThreeBalls() && APlayerLeadByTwoOrMoreBalls())
+            if (OnePlayerHasMoreThan(forty) && APlayerLeadByTwoOrMoreBalls())
                 return LeadingPlayer() + " wins";
 
-            if (BothPlayersHasWonThreeOrMoreBalls() && ScoreIsEqual())
+            if (BothPlayersHas(forty) && ScoreIsEqual())
                 return "deuce";
 
-            if (BothPlayersHasWonThreeOrMoreBalls() && APlayerLeadByOneBall())
+            if (BothPlayersHas(forty) && APlayerLeadByOneBall())
                 return "advantage " + LeadingPlayer();
 
-            if (BothPlayersHasWonThreeOrMoreBalls() && APlayerLeadByTwoOrMoreBalls())
+            if (BothPlayersHas(forty) && APlayerLeadByTwoOrMoreBalls())
                 return LeadingPlayer() + " wins";
 
             return string.Format("{0} - {1}", Score(winsPlayer1), Score(winsPlayer2));
         }
 
-        private bool OnePlayerLeadFortyToLove()
+        private bool OnePlayerHasMoreThan(int score)
         {
-            return OnePlayerHasForty() && OnePlayerHasLove();
+            return winsPlayer1 > score || winsPlayer2 > score;
         }
 
-        private bool OnePlayerHasLove()
+        private bool OnPlayerHas(int score)
         {
-            return winsPlayer1 == 0 || winsPlayer2 == 0;
+            return winsPlayer1 == score || winsPlayer2 == score;
         }
 
-        private bool OnePlayerHasForty()
+        private bool BothPlayersHas(int score)
         {
-            return winsPlayer1 == 3 || winsPlayer2 == 3;
+            return winsPlayer1 >= score && winsPlayer2 >= score;
         }
 
         private string LeadingPlayer()
