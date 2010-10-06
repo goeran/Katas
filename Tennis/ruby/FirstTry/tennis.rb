@@ -1,4 +1,8 @@
+require 'dsl'
+
 class Tennis
+  include Dsl
+  
   def initialize
     @wins_player1 = 0
     @wins_player2 = 0
@@ -9,40 +13,14 @@ class Tennis
       :forty => 3
     }
   end
-  
-  def one args
-    method = "one_"
-    args[:methods].reverse.each do |m| method += m + "_" end
-    method.gsub! /_$/, ""
-    if self.methods.include? method then
-      self.send method, args[:score]
-    end
-  end
-  
-  def both args
-    method = "both_players_has"
-    self.send method.to_sym, args[:score]
-  end
-  
-  def player args
-    methods = args[:methods]
-    methods.push "player"
-    { :score => args[:score], :methods => methods }
-  end
-  
-  def leading args
-    method = "leading_player_leads_by"
-    self.send method.to_sym, args[:score]
-  end
-  
-  def method_missing method, args
-    if args.class == Hash and args.has_key? :score then
-      methods = args[:methods]
-      methods.push method.to_s
-      return { :score => args[:score], :methods => methods } 
-    else
-      { :score => args, :methods => [method.to_s] }
-    end
+    
+  def score
+    is deuce! if both players has :forty 
+    is advantage! if both players has :forty and leading player leads by 1
+    is win! if one player has more than :forty and one player has :love
+    is win! if both players has :forty and leading player leads by 2
+    is still playing if !deuce? and !advantage? and !win?
+    return @result
   end
   
   def is score
@@ -61,33 +39,21 @@ class Tennis
     @result = leading_player + " wins"
   end
   
-  def still args
+  def still_playing *args
     @result = "#{print @wins_player1} - #{print @wins_player2}"
   end
-  
-  def playing
-  end
-  
-  def score
-    is deuce! if both players has :forty 
-    is advantage! if both players has :forty and leading player leads by 1
-    is win! if one player has more than :forty and one player has :love
-    is win! if both players has :forty and leading player leads by 2
-    is still playing if !deuce? and !advantage? and !win?
-    return @result
-  end
-  
+    
   def deuce? 
-    both players has :forty
+    both_players_has :forty
   end
   
   def advantage?
-    both players has :forty and leading player leads by 1
+    both_players_has :forty and leading_player_leads_by 1
   end
   
   def win?
-    (one player has more than :forty and one player has :love) or
-    (both players has :forty and leading player leads by 2)
+    (one_player_has_more_than :forty and one_player_has :love) or
+    (both_players_has :forty and leading_player_leads_by 2)
   end
   
   def both_players_has score
