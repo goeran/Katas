@@ -48,16 +48,6 @@ namespace TennisKata
             return winsPlayer1 > winsPlayer2 ? "Player1" : "Player2";
         }
 
-        private bool OnePlayerHasMoreThanThreeBalls()
-        {
-            return winsPlayer1 > 3 || winsPlayer2 > 3;
-        }
-
-        private bool BothPlayersHasWonThreeOrMoreBalls()
-        {
-            return winsPlayer1 > 2 && winsPlayer2 > 2;
-        }
-
         private bool ScoreIsEqual()
         {
             return winsPlayer1 == winsPlayer2;
