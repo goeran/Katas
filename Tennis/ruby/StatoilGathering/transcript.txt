@@ -1,0 +1,17 @@
+steps:
+1. describe score
+2. Make score tests data driven (moving to another branch, and describe the solution)
+	make play method to describe the game
+3. describe deuce
+	Use data driven tests from the beginning
+	Introduce both_players_have_forty
+4. describe advantage
+	Use data driven
+	Introduce leading_player
+	Introduce leading_player_leads_by
+	Introduce score_is_equal
+	Deuce should be above advantage logic in score
+5. describe win
+
+
+
